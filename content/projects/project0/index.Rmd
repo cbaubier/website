@@ -1,0 +1,14 @@
+---
+title: "project0"
+output: html_document
+---
+
+
+My name is **Chloé**. 
+I'm French and ever since I can remember, I've been obsessed by films. When I was living in Paris, I would go to the cinema at least twice a week. When people are bored, they usually go on Facebook or Instagram, I go on [BoxOfficeMojo] (https://boxofficemojo.com). 
+Since I've moved to the UK, I'm not going to lie, it's been tough. The cinemas here are so expansive and except for James Bond and Marvel movies, the screenings in London are not that good. 
+Hopefully with this website you'll gain more insight about the analytics of the film industry!
+
+Cheers!
+
+
