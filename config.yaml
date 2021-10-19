@@ -84,7 +84,7 @@ params:
       - image: projects/image1.jpg
       #  subtitle: 
         title: About me
-        url: projects/project0/index.Rmd
+        url: projects/project0
       - image: pic02.jpg
         subtitle: Feugiat Amet Tempus
         title: Tempus
