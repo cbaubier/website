@@ -1,7 +1,22 @@
 ---
-title: "project0"
-output: html_document
+title: 'Project0'
+author: "CHLOE BAUBIER"
+date: "19th OCTOBER 2021"
+output:
+  html_document:
+    theme: flatly
+    highlight: zenburn
+    toc: yes
+    toc_float: yes
 ---
+
+```{r load-libraries, warning=FALSE, message=FALSE, echo=FALSE}
+library(tidyverse)  # Load ggplot2, dplyr, and all the other tidyverse packages
+library(gapminder)  # gapminder dataset
+library(here)
+library(janitor)
+```
+
 
 
 My name is **Chloé**. 
