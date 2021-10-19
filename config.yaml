@@ -1,6 +1,6 @@
-baseURL: http://example.org/
+baseURL: "https://chloe_baubier_website.netlify.app/"
 languageCode: en-us
-title: Website
+title: Website of Chloé Baubier
 theme: forty
 googleAnalytics: ''
 disqusShortname: ''
