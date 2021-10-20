@@ -1,5 +1,5 @@
 ---
-title: "index.rmd"
+title: "Statistics of the industry"
 output: html_document
 ---
 
