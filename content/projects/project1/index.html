@@ -1,0 +1,107 @@
+---
+title: "Statistics of the industry"
+output: html_document
+---
+
+<script src="{{< blogdown/postref >}}index_files/header-attrs/header-attrs.js"></script>
+
+
+<div id="analysis-of-movies--imdb-dataset" class="section level1">
+<h1>Analysis of movies- IMDB dataset</h1>
+<p>For all of you movie fans out there, this section is analysing some basic statistics about all of your favourite movies!</p>
+<p>The dataset contains 2961 of the most successful movies.</p>
+<p>Let’s see their distribution by genre:</p>
+<pre><code>## # A tibble: 17 × 2
+## # Groups:   genre [17]
+##    genre           n
+##    &lt;chr&gt;       &lt;int&gt;
+##  1 Comedy        848
+##  2 Action        738
+##  3 Drama         498
+##  4 Adventure     288
+##  5 Crime         202
+##  6 Biography     135
+##  7 Horror        131
+##  8 Animation      35
+##  9 Fantasy        28
+## 10 Documentary    25
+## 11 Mystery        16
+## 12 Sci-Fi          7
+## 13 Family          3
+## 14 Musical         2
+## 15 Romance         2
+## 16 Western         2
+## 17 Thriller        1</code></pre>
+<p>It appears that most of them are comedies, followed by action movies (any Avengers fans?), Drama, Adventure and Crime.</p>
+<p>Now, let’s see which genre provides a higher return on budget:</p>
+<pre><code>## # A tibble: 17 × 4
+##    genre       average_gross average_budget return_on_budget
+##    &lt;chr&gt;               &lt;dbl&gt;          &lt;dbl&gt;            &lt;dbl&gt;
+##  1 Musical         92084000        3189500          28.9    
+##  2 Family         149160478.      14833333.         10.1    
+##  3 Western         20821884        3465000           6.01   
+##  4 Documentary     17353973.       5887852.          2.95   
+##  5 Horror          37713738.      13504916.          2.79   
+##  6 Fantasy         42408841.      17582143.          2.41   
+##  7 Comedy          42630552.      24446319.          1.74   
+##  8 Mystery         67533021.      39218750           1.72   
+##  9 Animation       98433792.      61701429.          1.60   
+## 10 Biography       45201805.      28543696.          1.58   
+## 11 Adventure       95794257.      66290069.          1.45   
+## 12 Drama           37465371.      26242933.          1.43   
+## 13 Crime           37502397.      26596169.          1.41   
+## 14 Romance         31264848.      25107500           1.25   
+## 15 Action          86583860.      71354888.          1.21   
+## 16 Sci-Fi          29788371.      27607143.          1.08   
+## 17 Thriller            2468         300000           0.00823</code></pre>
+<p>Musicals appear to be making a higher return which is mainly driven by the fact that they are the cheaper type of movies to produce.</p>
+<p>Now, let’s name drop a bit. Who do you think is the highest grossing director ?</p>
+<pre><code>## # A tibble: 15 × 5
+##    director              sgross average_gross median_gross   sd_gross
+##    &lt;chr&gt;                  &lt;dbl&gt;         &lt;dbl&gt;        &lt;dbl&gt;      &lt;dbl&gt;
+##  1 Steven Spielberg  4014061704    174524422.   164435221  101421051.
+##  2 Michael Bay       2231242537    171634041.   138396624  127161579.
+##  3 Tim Burton        2071275480    129454718.    76519172  108726924.
+##  4 Sam Raimi         2014600898    201460090.   234903076  162126632.
+##  5 James Cameron     1909725910    318287652.   175562880. 309171337.
+##  6 Christopher Nolan 1813227576    226653447    196667606. 187224133.
+##  7 George Lucas      1741418480    348283696    380262555  146193880.
+##  8 Robert Zemeckis   1619309108    124562239.   100853835   91300279.
+##  9 Clint Eastwood    1378321100     72543216.    46700000   75487408.
+## 10 Francis Lawrence  1358501971    271700394.   281666058  135437020.
+## 11 Ron Howard        1335988092    111332341    101587923   81933761.
+## 12 Gore Verbinski    1329600995    189942999.   123207194  154473822.
+## 13 Andrew Adamson    1137446920    284361730    279680930. 120895765.
+## 14 Shawn Levy        1129750988    102704635.    85463309   65484773.
+## 15 Ridley Scott      1128857598     80632686.    47775715   68812285.</code></pre>
+<p>Unsurprinsgly, our buddy Spielberg tops the ranking. Unpopular opinion: I’m not a big fan of his films…</p>
+<p>Finally, ratings. Let’s try to find out whether critics are snobs:</p>
+<pre><code>## # A tibble: 17 × 2
+##    genre       av_rating
+##    &lt;chr&gt;           &lt;dbl&gt;
+##  1 Biography        7.11
+##  2 Crime            6.92
+##  3 Mystery          6.86
+##  4 Musical          6.75
+##  5 Drama            6.73
+##  6 Documentary      6.66
+##  7 Sci-Fi           6.66
+##  8 Animation        6.65
+##  9 Romance          6.65
+## 10 Adventure        6.51
+## 11 Family           6.5 
+## 12 Action           6.23
+## 13 Fantasy          6.15
+## 14 Comedy           6.11
+## 15 Horror           5.83
+## 16 Western          5.7 
+## 17 Thriller         4.8</code></pre>
+<p>I think it’s safe to say that they are, right?</p>
+<p>Next question: is the budget allocated to produce a movie driving its income?</p>
+<pre class="r"><code>movies %&gt;% 
+ggplot(aes(x = gross, y = budget)) +
+  geom_point(alpha=0.2) +
+  geom_smooth(method = &quot;lm&quot;) </code></pre>
+<pre><code>## `geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/gross_on_budget-1.png" width="672" /></p>
+</div>
