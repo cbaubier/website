@@ -8,25 +8,25 @@ params:
   banner:
     buttonText: Get Started
     subtitle: |-
-    #  A WEBSITE CREATED BY CHLOE BAUBIER
+      A WEBSITE CREATED BY CHLOE BAUBIER
     #  AND RELEASED UNDER THE CREATIVE COMMONS.
     title: Movie analytics
   blog: {}
   contact:
- #   address:
-  #    - city: City, ST 00000
+   address:
+      - city: London, NW1 4SA
   #      country: Country
-  #      street: Street
-   #     title: Address
+        street: Regent's Park
+        title: London Business School
     buttonClear: Clear
     buttonSend: Send message
     email:
       - email: cbaubier@gmail.com
         title: Email
     enable: yes
-   # phone:
-   #   - phone: (000) 000-0000 x1234
-    #    title: Phone
+    phone:
+     - phone: +44 (0)20 7000 7000
+        title: Phone
   #custom_css: []
   #custom_js: []
   description: Your description
@@ -112,7 +112,7 @@ params:
   #    \n    Mauris aliquet magna magna sed nunc rhoncus pharetra. \n    Pellentesque
    #   condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia
    #   pellentesque lorem ipsum dolor. \n    Nullam et orci eu lorem consequat tincidunt.
-    ""  Vivamus et sagittis libero.\n    Mauris aliquet magna magna sed nunc rhoncus
+    #  Vivamus et sagittis libero.\n    Mauris aliquet magna magna sed nunc rhoncus
     #  amet pharetra et feugiat tempus."
     title: See what movies are currently showing
     url: blogs
