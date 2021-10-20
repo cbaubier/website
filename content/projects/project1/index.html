@@ -11,91 +11,400 @@ output: html_document
 <p>For all of you movie fans out there, this section is analysing some basic statistics about all of your favourite movies!</p>
 <p>The dataset contains 2961 of the most successful movies.</p>
 <p>Let’s see their distribution by genre:</p>
-<pre><code>## # A tibble: 17 × 2
-## # Groups:   genre [17]
-##    genre           n
-##    &lt;chr&gt;       &lt;int&gt;
-##  1 Comedy        848
-##  2 Action        738
-##  3 Drama         498
-##  4 Adventure     288
-##  5 Crime         202
-##  6 Biography     135
-##  7 Horror        131
-##  8 Animation      35
-##  9 Fantasy        28
-## 10 Documentary    25
-## 11 Mystery        16
-## 12 Sci-Fi          7
-## 13 Family          3
-## 14 Musical         2
-## 15 Romance         2
-## 16 Western         2
-## 17 Thriller        1</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="left">genre</th>
+<th align="right">n</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Comedy</td>
+<td align="right">848</td>
+</tr>
+<tr class="even">
+<td align="left">Action</td>
+<td align="right">738</td>
+</tr>
+<tr class="odd">
+<td align="left">Drama</td>
+<td align="right">498</td>
+</tr>
+<tr class="even">
+<td align="left">Adventure</td>
+<td align="right">288</td>
+</tr>
+<tr class="odd">
+<td align="left">Crime</td>
+<td align="right">202</td>
+</tr>
+<tr class="even">
+<td align="left">Biography</td>
+<td align="right">135</td>
+</tr>
+<tr class="odd">
+<td align="left">Horror</td>
+<td align="right">131</td>
+</tr>
+<tr class="even">
+<td align="left">Animation</td>
+<td align="right">35</td>
+</tr>
+<tr class="odd">
+<td align="left">Fantasy</td>
+<td align="right">28</td>
+</tr>
+<tr class="even">
+<td align="left">Documentary</td>
+<td align="right">25</td>
+</tr>
+<tr class="odd">
+<td align="left">Mystery</td>
+<td align="right">16</td>
+</tr>
+<tr class="even">
+<td align="left">Sci-Fi</td>
+<td align="right">7</td>
+</tr>
+<tr class="odd">
+<td align="left">Family</td>
+<td align="right">3</td>
+</tr>
+<tr class="even">
+<td align="left">Musical</td>
+<td align="right">2</td>
+</tr>
+<tr class="odd">
+<td align="left">Romance</td>
+<td align="right">2</td>
+</tr>
+<tr class="even">
+<td align="left">Western</td>
+<td align="right">2</td>
+</tr>
+<tr class="odd">
+<td align="left">Thriller</td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
 <p>It appears that most of them are comedies, followed by action movies (any Avengers fans?), Drama, Adventure and Crime.</p>
 <p>Now, let’s see which genre provides a higher return on budget:</p>
-<pre><code>## # A tibble: 17 × 4
-##    genre       average_gross average_budget return_on_budget
-##    &lt;chr&gt;               &lt;dbl&gt;          &lt;dbl&gt;            &lt;dbl&gt;
-##  1 Musical         92084000        3189500          28.9    
-##  2 Family         149160478.      14833333.         10.1    
-##  3 Western         20821884        3465000           6.01   
-##  4 Documentary     17353973.       5887852.          2.95   
-##  5 Horror          37713738.      13504916.          2.79   
-##  6 Fantasy         42408841.      17582143.          2.41   
-##  7 Comedy          42630552.      24446319.          1.74   
-##  8 Mystery         67533021.      39218750           1.72   
-##  9 Animation       98433792.      61701429.          1.60   
-## 10 Biography       45201805.      28543696.          1.58   
-## 11 Adventure       95794257.      66290069.          1.45   
-## 12 Drama           37465371.      26242933.          1.43   
-## 13 Crime           37502397.      26596169.          1.41   
-## 14 Romance         31264848.      25107500           1.25   
-## 15 Action          86583860.      71354888.          1.21   
-## 16 Sci-Fi          29788371.      27607143.          1.08   
-## 17 Thriller            2468         300000           0.00823</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="left">genre</th>
+<th align="right">average_gross</th>
+<th align="right">average_budget</th>
+<th align="right">return_on_budget</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Musical</td>
+<td align="right">92084000</td>
+<td align="right">3189500</td>
+<td align="right">28.8709829</td>
+</tr>
+<tr class="even">
+<td align="left">Family</td>
+<td align="right">149160478</td>
+<td align="right">14833333</td>
+<td align="right">10.0557625</td>
+</tr>
+<tr class="odd">
+<td align="left">Western</td>
+<td align="right">20821884</td>
+<td align="right">3465000</td>
+<td align="right">6.0092017</td>
+</tr>
+<tr class="even">
+<td align="left">Documentary</td>
+<td align="right">17353973</td>
+<td align="right">5887852</td>
+<td align="right">2.9474199</td>
+</tr>
+<tr class="odd">
+<td align="left">Horror</td>
+<td align="right">37713738</td>
+<td align="right">13504916</td>
+<td align="right">2.7925933</td>
+</tr>
+<tr class="even">
+<td align="left">Fantasy</td>
+<td align="right">42408841</td>
+<td align="right">17582143</td>
+<td align="right">2.4120405</td>
+</tr>
+<tr class="odd">
+<td align="left">Comedy</td>
+<td align="right">42630552</td>
+<td align="right">24446319</td>
+<td align="right">1.7438434</td>
+</tr>
+<tr class="even">
+<td align="left">Mystery</td>
+<td align="right">67533021</td>
+<td align="right">39218750</td>
+<td align="right">1.7219575</td>
+</tr>
+<tr class="odd">
+<td align="left">Animation</td>
+<td align="right">98433792</td>
+<td align="right">61701429</td>
+<td align="right">1.5953244</td>
+</tr>
+<tr class="even">
+<td align="left">Biography</td>
+<td align="right">45201805</td>
+<td align="right">28543696</td>
+<td align="right">1.5836003</td>
+</tr>
+<tr class="odd">
+<td align="left">Adventure</td>
+<td align="right">95794257</td>
+<td align="right">66290069</td>
+<td align="right">1.4450770</td>
+</tr>
+<tr class="even">
+<td align="left">Drama</td>
+<td align="right">37465371</td>
+<td align="right">26242933</td>
+<td align="right">1.4276366</td>
+</tr>
+<tr class="odd">
+<td align="left">Crime</td>
+<td align="right">37502397</td>
+<td align="right">26596169</td>
+<td align="right">1.4100676</td>
+</tr>
+<tr class="even">
+<td align="left">Romance</td>
+<td align="right">31264848</td>
+<td align="right">25107500</td>
+<td align="right">1.2452394</td>
+</tr>
+<tr class="odd">
+<td align="left">Action</td>
+<td align="right">86583860</td>
+<td align="right">71354888</td>
+<td align="right">1.2134258</td>
+</tr>
+<tr class="even">
+<td align="left">Sci-Fi</td>
+<td align="right">29788371</td>
+<td align="right">27607143</td>
+<td align="right">1.0790096</td>
+</tr>
+<tr class="odd">
+<td align="left">Thriller</td>
+<td align="right">2468</td>
+<td align="right">300000</td>
+<td align="right">0.0082267</td>
+</tr>
+</tbody>
+</table>
 <p>Musicals appear to be making a higher return which is mainly driven by the fact that they are the cheaper type of movies to produce.</p>
 <p>Now, let’s name drop a bit. Who do you think is the highest grossing director ?</p>
-<pre><code>## # A tibble: 15 × 5
-##    director              sgross average_gross median_gross   sd_gross
-##    &lt;chr&gt;                  &lt;dbl&gt;         &lt;dbl&gt;        &lt;dbl&gt;      &lt;dbl&gt;
-##  1 Steven Spielberg  4014061704    174524422.   164435221  101421051.
-##  2 Michael Bay       2231242537    171634041.   138396624  127161579.
-##  3 Tim Burton        2071275480    129454718.    76519172  108726924.
-##  4 Sam Raimi         2014600898    201460090.   234903076  162126632.
-##  5 James Cameron     1909725910    318287652.   175562880. 309171337.
-##  6 Christopher Nolan 1813227576    226653447    196667606. 187224133.
-##  7 George Lucas      1741418480    348283696    380262555  146193880.
-##  8 Robert Zemeckis   1619309108    124562239.   100853835   91300279.
-##  9 Clint Eastwood    1378321100     72543216.    46700000   75487408.
-## 10 Francis Lawrence  1358501971    271700394.   281666058  135437020.
-## 11 Ron Howard        1335988092    111332341    101587923   81933761.
-## 12 Gore Verbinski    1329600995    189942999.   123207194  154473822.
-## 13 Andrew Adamson    1137446920    284361730    279680930. 120895765.
-## 14 Shawn Levy        1129750988    102704635.    85463309   65484773.
-## 15 Ridley Scott      1128857598     80632686.    47775715   68812285.</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="left">director</th>
+<th align="right">sgross</th>
+<th align="right">average_gross</th>
+<th align="right">median_gross</th>
+<th align="right">sd_gross</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Steven Spielberg</td>
+<td align="right">4014061704</td>
+<td align="right">174524422</td>
+<td align="right">164435221</td>
+<td align="right">101421051</td>
+</tr>
+<tr class="even">
+<td align="left">Michael Bay</td>
+<td align="right">2231242537</td>
+<td align="right">171634041</td>
+<td align="right">138396624</td>
+<td align="right">127161579</td>
+</tr>
+<tr class="odd">
+<td align="left">Tim Burton</td>
+<td align="right">2071275480</td>
+<td align="right">129454718</td>
+<td align="right">76519172</td>
+<td align="right">108726924</td>
+</tr>
+<tr class="even">
+<td align="left">Sam Raimi</td>
+<td align="right">2014600898</td>
+<td align="right">201460090</td>
+<td align="right">234903076</td>
+<td align="right">162126632</td>
+</tr>
+<tr class="odd">
+<td align="left">James Cameron</td>
+<td align="right">1909725910</td>
+<td align="right">318287652</td>
+<td align="right">175562880</td>
+<td align="right">309171337</td>
+</tr>
+<tr class="even">
+<td align="left">Christopher Nolan</td>
+<td align="right">1813227576</td>
+<td align="right">226653447</td>
+<td align="right">196667606</td>
+<td align="right">187224133</td>
+</tr>
+<tr class="odd">
+<td align="left">George Lucas</td>
+<td align="right">1741418480</td>
+<td align="right">348283696</td>
+<td align="right">380262555</td>
+<td align="right">146193880</td>
+</tr>
+<tr class="even">
+<td align="left">Robert Zemeckis</td>
+<td align="right">1619309108</td>
+<td align="right">124562239</td>
+<td align="right">100853835</td>
+<td align="right">91300279</td>
+</tr>
+<tr class="odd">
+<td align="left">Clint Eastwood</td>
+<td align="right">1378321100</td>
+<td align="right">72543216</td>
+<td align="right">46700000</td>
+<td align="right">75487408</td>
+</tr>
+<tr class="even">
+<td align="left">Francis Lawrence</td>
+<td align="right">1358501971</td>
+<td align="right">271700394</td>
+<td align="right">281666058</td>
+<td align="right">135437020</td>
+</tr>
+<tr class="odd">
+<td align="left">Ron Howard</td>
+<td align="right">1335988092</td>
+<td align="right">111332341</td>
+<td align="right">101587923</td>
+<td align="right">81933761</td>
+</tr>
+<tr class="even">
+<td align="left">Gore Verbinski</td>
+<td align="right">1329600995</td>
+<td align="right">189942999</td>
+<td align="right">123207194</td>
+<td align="right">154473822</td>
+</tr>
+<tr class="odd">
+<td align="left">Andrew Adamson</td>
+<td align="right">1137446920</td>
+<td align="right">284361730</td>
+<td align="right">279680930</td>
+<td align="right">120895765</td>
+</tr>
+<tr class="even">
+<td align="left">Shawn Levy</td>
+<td align="right">1129750988</td>
+<td align="right">102704635</td>
+<td align="right">85463309</td>
+<td align="right">65484773</td>
+</tr>
+<tr class="odd">
+<td align="left">Ridley Scott</td>
+<td align="right">1128857598</td>
+<td align="right">80632686</td>
+<td align="right">47775715</td>
+<td align="right">68812285</td>
+</tr>
+</tbody>
+</table>
 <p>Unsurprinsgly, our buddy Spielberg tops the ranking. Unpopular opinion: I’m not a big fan of his films…</p>
 <p>Finally, ratings. Let’s try to find out whether critics are snobs:</p>
-<pre><code>## # A tibble: 17 × 2
-##    genre       av_rating
-##    &lt;chr&gt;           &lt;dbl&gt;
-##  1 Biography        7.11
-##  2 Crime            6.92
-##  3 Mystery          6.86
-##  4 Musical          6.75
-##  5 Drama            6.73
-##  6 Documentary      6.66
-##  7 Sci-Fi           6.66
-##  8 Animation        6.65
-##  9 Romance          6.65
-## 10 Adventure        6.51
-## 11 Family           6.5 
-## 12 Action           6.23
-## 13 Fantasy          6.15
-## 14 Comedy           6.11
-## 15 Horror           5.83
-## 16 Western          5.7 
-## 17 Thriller         4.8</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="left">genre</th>
+<th align="right">av_rating</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Biography</td>
+<td align="right">7.114074</td>
+</tr>
+<tr class="even">
+<td align="left">Crime</td>
+<td align="right">6.915347</td>
+</tr>
+<tr class="odd">
+<td align="left">Mystery</td>
+<td align="right">6.856250</td>
+</tr>
+<tr class="even">
+<td align="left">Musical</td>
+<td align="right">6.750000</td>
+</tr>
+<tr class="odd">
+<td align="left">Drama</td>
+<td align="right">6.731526</td>
+</tr>
+<tr class="even">
+<td align="left">Documentary</td>
+<td align="right">6.660000</td>
+</tr>
+<tr class="odd">
+<td align="left">Sci-Fi</td>
+<td align="right">6.657143</td>
+</tr>
+<tr class="even">
+<td align="left">Animation</td>
+<td align="right">6.651429</td>
+</tr>
+<tr class="odd">
+<td align="left">Romance</td>
+<td align="right">6.650000</td>
+</tr>
+<tr class="even">
+<td align="left">Adventure</td>
+<td align="right">6.506597</td>
+</tr>
+<tr class="odd">
+<td align="left">Family</td>
+<td align="right">6.500000</td>
+</tr>
+<tr class="even">
+<td align="left">Action</td>
+<td align="right">6.232249</td>
+</tr>
+<tr class="odd">
+<td align="left">Fantasy</td>
+<td align="right">6.153571</td>
+</tr>
+<tr class="even">
+<td align="left">Comedy</td>
+<td align="right">6.109670</td>
+</tr>
+<tr class="odd">
+<td align="left">Horror</td>
+<td align="right">5.833588</td>
+</tr>
+<tr class="even">
+<td align="left">Western</td>
+<td align="right">5.700000</td>
+</tr>
+<tr class="odd">
+<td align="left">Thriller</td>
+<td align="right">4.800000</td>
+</tr>
+</tbody>
+</table>
 <p>I think it’s safe to say that they are, right?</p>
 <p>Next question: is the budget allocated to produce a movie driving its income?</p>
 <pre class="r"><code>movies %&gt;% 

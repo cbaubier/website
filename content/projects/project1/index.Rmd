@@ -19,6 +19,7 @@ library(janitor)
 library(vroom)
 library(tidyquant)
 library(rvest) # to scrape wikipedia page
+library(knitr)
 ```
 
 # Analysis of movies- IMDB dataset
@@ -31,10 +32,13 @@ The dataset contains 2961 of the most successful movies.
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 
 movies <- read_csv(here::here("data", "movies.csv"))
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
 movies %>% 
   group_by(genre) %>% 
-  count(sort=TRUE)
-
+  count(sort=TRUE) %>% 
+kable() 
 ```
 It appears that most of them are comedies, followed by action movies (any Avengers fans?), Drama, Adventure and Crime. 
 
@@ -44,7 +48,8 @@ Now, let's see which genre provides a higher return on budget:
 movies %>% 
   group_by(genre) %>%
   summarise(average_gross=mean(gross),average_budget=mean(budget),return_on_budget=average_gross/average_budget) %>% 
-arrange(desc(return_on_budget))
+arrange(desc(return_on_budget)) %>% 
+  kable()
 ```
 
 Musicals appear to be making a higher return which is mainly driven by the fact that they are the cheaper type of movies to produce.
@@ -55,7 +60,8 @@ Now, let's name drop a bit. Who do you think is the highest grossing director ?
 movies %>% 
 group_by(director) %>%
   summarise(sgross=sum(gross),average_gross=mean(gross),median_gross=median(gross),sd_gross=sd(gross)) %>% 
-slice_max(order_by = sgross, n=15) 
+slice_max(order_by = sgross, n=15) %>% 
+  kable()
 
 ```
 
@@ -67,7 +73,8 @@ Finally, ratings. Let's try to find out whether critics are snobs:
 movies %>% 
 group_by(genre) %>%
   summarise(av_rating=mean(rating)) %>%  
-arrange(desc(av_rating))
+arrange(desc(av_rating)) %>% 
+  kable()
 
 ```
 I think it's safe to say that they are, right?
