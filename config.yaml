@@ -10,7 +10,7 @@ params:
     subtitle: |-
     #  A WEBSITE CREATED BY CHLOE BAUBIER
     #  AND RELEASED UNDER THE CREATIVE COMMONS.
-    title: Movies analytics
+    title: Movie analytics
   blog: {}
   contact:
  #   address:
@@ -18,7 +18,7 @@ params:
   #      country: Country
   #      street: Street
    #     title: Address
-  #  buttonClear: Clear
+    buttonClear: Clear
     buttonSend: Send message
     email:
       - email: cbaubier@gmail.com
@@ -69,9 +69,9 @@ params:
     links:
       - name: Home
         url: '#'
-      - name: Blogs
-        url: blogs
-      - name: Generic Blog
+      - name: Now showing
+        url: projects/project4
+      - name: Upcoming releases
         url: blogs/ipsum
       - name: Elements
         url: elements.html
@@ -93,22 +93,22 @@ params:
        # subtitle: Lorem Etiam Nullam
         title: Burton vs Spielberg
         url: projects/project2
-      - image: pic04.jpg
-        subtitle: Nisl Sed Aliquam
-        title: Ipsum
-        url: blogs/ipsum
-      - image: pic05.jpg
-        subtitle: Ipsum Dolor Sit Amet
-        title: Consequat
-        url: blogs/ipsum
-      - image: pic06.jpg
-        subtitle: Feugiat Amet Tempus
-        title: Etiam
-        url: blogs/ipsum
+      - image: image4.jpg
+       # subtitle: Nisl Sed Aliquam
+        title: Save private ~~Ryan~~ cinema
+        url: projects/project3
+     # - image: pic05.jpg
+     #   subtitle: Ipsum Dolor Sit Amet
+     #  title: Consequat
+      #  url: blogs/ipsum
+     # - image: pic06.jpg
+     #   subtitle: Feugiat Amet Tempus
+     #   title: Etiam
+     #   url: blogs/ipsum
   two:
     buttonText: Get Started
     enable: yes
-    subtitle: "Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero.
+   subtitle: "Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero.
       \n    Mauris aliquet magna magna sed nunc rhoncus pharetra. \n    Pellentesque
       condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia
       pellentesque lorem ipsum dolor. \n    Nullam et orci eu lorem consequat tincidunt.
