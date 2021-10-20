@@ -1,5 +1,5 @@
 ---
-title: "Now showing"
+title: "Upcoming releases"
 output: html_document
 ---
 
@@ -7,5 +7,5 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-Movies currently showing in London
+
 

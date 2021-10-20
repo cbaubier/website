@@ -27,8 +27,8 @@ params:
    # phone:
    #   - phone: (000) 000-0000 x1234
     #    title: Phone
-  custom_css: []
-  custom_js: []
+  #custom_css: []
+  #custom_js: []
   description: Your description
   error404:
     heading: Page couldn't be found
@@ -70,11 +70,11 @@ params:
       - name: Home
         url: '#'
       - name: Now showing
-        url: projects/project4
-      - name: Upcoming releases
-        url: blogs/ipsum
-      - name: Elements
-        url: elements.html
+        url: blogs
+     # - name: Upcoming releases
+     #   url: projects/project4
+    #  - name: Elements
+    #    url: elements.html
     menu: Menu
  #   subtitle: By HTML5 Up
     title: Home
@@ -93,7 +93,7 @@ params:
        # subtitle: Lorem Etiam Nullam
         title: Burton vs Spielberg
         url: projects/project2
-      - image: image4.jpg
+      - image: projects/image4.jpg
        # subtitle: Nisl Sed Aliquam
         title: Save private ~~Ryan~~ cinema
         url: projects/project3
@@ -106,13 +106,13 @@ params:
      #   title: Etiam
      #   url: blogs/ipsum
   two:
-    buttonText: Get Started
+    buttonText: Check it out
     enable: yes
-   subtitle: "Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero.
-      \n    Mauris aliquet magna magna sed nunc rhoncus pharetra. \n    Pellentesque
-      condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia
-      pellentesque lorem ipsum dolor. \n    Nullam et orci eu lorem consequat tincidunt.
-      Vivamus et sagittis libero.\n    Mauris aliquet magna magna sed nunc rhoncus
-      amet pharetra et feugiat tempus."
-    title: Massa libero
+  # subtitle: "Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero.
+  #    \n    Mauris aliquet magna magna sed nunc rhoncus pharetra. \n    Pellentesque
+   #   condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia
+   #   pellentesque lorem ipsum dolor. \n    Nullam et orci eu lorem consequat tincidunt.
+    ""  Vivamus et sagittis libero.\n    Mauris aliquet magna magna sed nunc rhoncus
+    #  amet pharetra et feugiat tempus."
+    title: See what movies are currently showing
     url: blogs
