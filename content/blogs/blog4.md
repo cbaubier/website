@@ -8,8 +8,14 @@ description: Nullam et orci eu lorem consequat tincidunt vivamus et sagittis mag
   sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem
   consequat tincidunt. Vivamus et sagittis tempus.
 draft: false
-image: pic07.jpg
+image: image8.jpg
 keywords: ""
 slug: aliquam
-title: Aliquam
+title: The French Dispatch
 ---
+
+*Synopsis*:  
+A love letter to journalists set in an outpost of an American newspaper in a fictional 20th-century French city that brings to life a collection of stories published in "The French Dispatch" magazine.  
+*Director*: Wes Anderson  
+*Starring*: Saoirse Ronan,Timothée Chalamet, Elisabeth Moss, Bill Murray, Owen Wilson  
+*UK release date*: 22 Oct 2021  

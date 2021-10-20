@@ -8,8 +8,14 @@ description: Nullam et orci eu lorem consequat tincidunt vivamus et sagittis mag
   sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem
   consequat tincidunt. Vivamus et sagittis tempus.
 draft: false
-image: pic08.jpg
+image: image7.jpg
 keywords: ""
 slug: tempus
-title: Tempus
+title: The last duel
 ---
+
+*Synopsis*:   
+King Charles VI declares that Knight Jean de Carrouges settle his dispute with his squire by challenging him to a duel.  
+*Director:* Ridley Scott  
+*Starring*: Jodie Comer, Matt Damon, Ben Afleck, Adam Driver  
+*UK release date*: 15 Oct 2021
