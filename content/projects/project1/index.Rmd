@@ -82,7 +82,7 @@ I think it's safe to say that they are, right?
 
 Next question: is the budget allocated to produce a movie driving its income?
 
-```{r, gross_on_budget}
+```{r, gross_on_budget, echo=FALSE}
 
 movies %>% 
 ggplot(aes(x = gross, y = budget)) +

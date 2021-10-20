@@ -1,0 +1,70 @@
+---
+title: "Burton vs. Spielberg"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Life or death question: who wins in a fight between Tim Burton and Steven Spielberg?
+For us to answer this question we'll try to find out which of the two has the best ratings!
+
+
+```{r load-libraries, warning=FALSE, message=FALSE, echo=FALSE}
+library(tidyverse)  # Load ggplot2, dplyr, and all the other tidyverse packages
+library(mosaic)
+library(ggthemes)
+library(lubridate)
+library(fivethirtyeight)
+library(here)
+library(skimr)
+library(janitor)
+library(vroom)
+library(tidyquant)
+library(rvest) # to scrape wikipedia page
+library(knitr)
+```
+
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+
+movies <- read_csv(here::here("data", "movies.csv"))
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+
+movies_new <- movies %>% 
+  filter(director %in% c("Steven Spielberg","Tim Burton")) 
+
+t.test(rating ~ director, data = movies_new)
+
+imdb_ratings <- movies_new %>%
+  group_by(director) %>% 
+  summarise(mean_rating = mean(rating),
+            count = n(),
+            margin_of_error = qt(0.975, count-1)*sd(rating)/sqrt(count),
+            lower = mean_rating - margin_of_error,
+            upper = mean_rating + margin_of_error)
+
+ggplot(imdb_ratings,aes(x = mean_rating, y = reorder(director, desc(director)), colour = director)) + 
+  geom_point(size = 5) +
+  geom_errorbar(aes(xmin = lower, xmax = upper), width = 0.1, size = 2) +
+  geom_rect(aes(xmin=max(lower), xmax=min(upper), ymin=0, ymax=Inf),
+            color='grey', alpha=0.2) +
+  
+  geom_text(aes(label = round(mean_rating, digits = 2), x = mean_rating),
+            size = 7, colour = "black", nudge_y = 0.15) + 
+  geom_text(aes(label = round(lower, digits = 2), x = lower),
+            size = 5, colour = "black",nudge_y = 0.1) +
+  geom_text(aes(label = round(upper, digits = 2), x = upper),
+            size = 5, colour = "black",nudge_y = 0.1) +
+  
+  labs(title = "Spielberg vs Burton: who has the best ratings?",
+       subtitle = "95% confidence intervals overlap" ,
+       x = "Mean IMDB Rating", y = " ") +
+  theme_bw() +
+  theme(legend.position = "none")
+```
+Our statistics analysis clearly shows that Spielberg wins against Burton.
+I'm not going to lie, I actually agree with this. What do you guys think? 

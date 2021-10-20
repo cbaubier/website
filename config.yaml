@@ -89,10 +89,10 @@ params:
        # subtitle: Feugiat Amet Tempus
         title: Statistics of the industry
         url: projects/project1
-      - image: pic03.jpg
-        subtitle: Lorem Etiam Nullam
-        title: Magna
-        url: blogs/magna
+      - image: projects/image3.jpg
+       # subtitle: Lorem Etiam Nullam
+        title: Burton vs Spielberg
+        url: projects/project2
       - image: pic04.jpg
         subtitle: Nisl Sed Aliquam
         title: Ipsum

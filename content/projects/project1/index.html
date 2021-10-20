@@ -407,10 +407,6 @@ output: html_document
 </table>
 <p>I think it’s safe to say that they are, right?</p>
 <p>Next question: is the budget allocated to produce a movie driving its income?</p>
-<pre class="r"><code>movies %&gt;% 
-ggplot(aes(x = gross, y = budget)) +
-  geom_point(alpha=0.2) +
-  geom_smooth(method = &quot;lm&quot;) </code></pre>
 <pre><code>## `geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
 <p><img src="{{< blogdown/postref >}}index_files/figure-html/gross_on_budget-1.png" width="672" /></p>
 </div>
