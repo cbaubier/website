@@ -1,0 +1,86 @@
+---
+title: "index.rmd"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r load-libraries, warning=FALSE, message=FALSE, echo=FALSE}
+library(tidyverse)  # Load ggplot2, dplyr, and all the other tidyverse packages
+library(mosaic)
+library(ggthemes)
+library(lubridate)
+library(fivethirtyeight)
+library(here)
+library(skimr)
+library(janitor)
+library(vroom)
+library(tidyquant)
+library(rvest) # to scrape wikipedia page
+```
+
+# Analysis of movies- IMDB dataset
+
+For all of you movie fans out there, this section is analysing some basic statistics about all of your favourite movies!
+  
+The dataset contains 2961 of the most successful movies.
+ 
+  Let's see their distribution by genre:
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+
+movies <- read_csv(here::here("data", "movies.csv"))
+movies %>% 
+  group_by(genre) %>% 
+  count(sort=TRUE)
+
+```
+It appears that most of them are comedies, followed by action movies (any Avengers fans?), Drama, Adventure and Crime. 
+
+Now, let's see which genre provides a higher return on budget:
+
+```{r, echo=FALSE }
+movies %>% 
+  group_by(genre) %>%
+  summarise(average_gross=mean(gross),average_budget=mean(budget),return_on_budget=average_gross/average_budget) %>% 
+arrange(desc(return_on_budget))
+```
+
+Musicals appear to be making a higher return which is mainly driven by the fact that they are the cheaper type of movies to produce.
+
+Now, let's name drop a bit. Who do you think is the highest grossing director ? 
+
+```{r, echo=FALSE}
+movies %>% 
+group_by(director) %>%
+  summarise(sgross=sum(gross),average_gross=mean(gross),median_gross=median(gross),sd_gross=sd(gross)) %>% 
+slice_max(order_by = sgross, n=15) 
+
+```
+
+Unsurprinsgly, our buddy Spielberg tops the ranking. Unpopular opinion: I'm not a big fan of his films...
+
+Finally, ratings. Let's try to find out whether critics are snobs: 
+
+```{r, echo=FALSE}
+movies %>% 
+group_by(genre) %>%
+  summarise(av_rating=mean(rating)) %>%  
+arrange(desc(av_rating))
+
+```
+I think it's safe to say that they are, right?
+
+
+Next question: is the budget allocated to produce a movie driving its income?
+
+```{r, gross_on_budget}
+
+movies %>% 
+ggplot(aes(x = gross, y = budget)) +
+  geom_point(alpha=0.2) +
+  geom_smooth(method = "lm") 
+
+```
+  

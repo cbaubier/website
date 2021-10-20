@@ -77,7 +77,7 @@ params:
         url: elements.html
     menu: Menu
  #   subtitle: By HTML5 Up
-    title: Chloé Baubier
+    title: Home
   tiles:
     enable: yes
     showcase:
@@ -85,10 +85,10 @@ params:
       #  subtitle: 
         title: About me
         url: projects/project0
-      - image: pic02.jpg
-        subtitle: Feugiat Amet Tempus
-        title: Tempus
-        url: blogs/tempus
+      - image: projects/image2.jpg
+       # subtitle: Feugiat Amet Tempus
+        title: Statistics of the industry
+        url: projects/project1
       - image: pic03.jpg
         subtitle: Lorem Etiam Nullam
         title: Magna
