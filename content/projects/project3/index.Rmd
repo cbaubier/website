@@ -1,0 +1,55 @@
+---
+title: "2020 was a wreck"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Life or death question: who wins in a fight between Tim Burton and Steven Spielberg?
+For us to answer this question we'll try to find out which of the two has the best ratings!
+
+
+```{r load-libraries, warning=FALSE, message=FALSE, echo=FALSE}
+library(tidyverse)  # Load ggplot2, dplyr, and all the other tidyverse packages
+library(mosaic)
+library(ggthemes)
+library(lubridate)
+library(fivethirtyeight)
+library(here)
+library(skimr)
+library(janitor)
+library(vroom)
+library(tidyquant)
+library(rvest) # to scrape wikipedia page
+library(knitr)
+```
+ 
+ 
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+
+movies <- read_csv(here::here("data", "movies2.csv"))
+  #movies$Budget <- as.numeric(movies$Budget)
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+
+ 
+  ggplot(movies) +
+geom_path(aes(x=Year, y=Total ), color="blue")+
+labs(title = "The economics of cinema",
+       subtitle = "aka How Covid kicked the movie industry's ass" ,
+       x = "year", y = "Number of movies released") +
+  theme_clean() +
+  theme(legend.position = "none")
+
+  ggplot(movies) +
+geom_path(aes(x=Year,y=Gross ), color="red")+
+labs(x = "year", y = " Worlwide Box Office")+
+    theme_clean() 
+  
+```
+Our statistics analysis clearly shows that Spielberg wins against Burton.
+I'm not going to lie, I actually agree with this. What do you guys think? 

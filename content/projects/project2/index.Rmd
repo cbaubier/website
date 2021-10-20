@@ -37,8 +37,6 @@ movies <- read_csv(here::here("data", "movies.csv"))
 movies_new <- movies %>% 
   filter(director %in% c("Steven Spielberg","Tim Burton")) 
 
-t.test(rating ~ director, data = movies_new)
-
 imdb_ratings <- movies_new %>%
   group_by(director) %>% 
   summarise(mean_rating = mean(rating),
